@@ -101,7 +101,13 @@ export function MicroservicesCity({ position = [0, 0, -80] }: { position?: [numb
         <boxGeometry args={[1, 1, 1]}>
           <instancedBufferAttribute attach="attributes-color" args={[colors, 3]} />
         </boxGeometry>
-        <meshStandardMaterial vertexColors toneMapped={false} metalness={0.8} roughness={0.2} transparent opacity={0.9} />
+        <meshStandardMaterial 
+          vertexColors 
+          metalness={0.9} 
+          roughness={0.1} 
+          emissiveIntensity={0.5}
+          envMapIntensity={1}
+        />
       </instancedMesh>
       
       <pointLight color="#00FF88" intensity={2} distance={50} position={[0, 5, 0]} decay={2} />

@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         'data-black': '#050810',
+        'deep-space': '#0a1128',
         'electric-blue': '#00D4FF',
         'terminal-green': '#00FF88',
         'alert-amber': '#FF9500',
@@ -23,6 +24,7 @@ const config: Config = {
         'cursor-blink': 'blink 1s step-end infinite',
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+        'scanline': 'scanline 8s linear infinite',
       },
       keyframes: {
         blink: {
@@ -30,12 +32,16 @@ const config: Config = {
           '50%': { opacity: '0' },
         },
         fadeIn: {
-          from: { opacity: '0', transform: 'translateY(8px)' },
+          from: { opacity: '0', transform: 'translateY(12px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+        scanline: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' },
+        },
         glowPulse: {
-          '0%, 100%': { boxShadow: '0 0 8px #00D4FF, 0 0 16px #00D4FF40' },
-          '50%': { boxShadow: '0 0 16px #00D4FF, 0 0 32px #00D4FF60' },
+          '0%, 100%': { boxShadow: '0 0 8px #00D4FF10, 0 0 16px #00D4FF05' },
+          '50%': { boxShadow: '0 0 16px #00D4FF20, 0 0 32px #00D4FF10' },
         },
       },
     },

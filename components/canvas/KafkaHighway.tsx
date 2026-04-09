@@ -94,10 +94,17 @@ export function KafkaHighway({ position = [0, 0, -30] }: { position?: [number, n
     <group position={new THREE.Vector3(...position)}>
       <instancedMesh ref={meshRef} args={[undefined, undefined, PACKET_COUNT]}>
         {/* We use a simple cylinder or box as the "streak" */}
-        <boxGeometry args={[0.2, 0.2, 1]}>
+        <boxGeometry args={[0.05, 0.05, 1]}>
           <instancedBufferAttribute attach="attributes-color" args={[colors, 3]} />
         </boxGeometry>
-        <meshBasicMaterial vertexColors toneMapped={false} transparent opacity={0.8} />
+        <meshStandardMaterial 
+          vertexColors 
+          emissiveIntensity={2}
+          roughness={0}
+          metalness={1}
+          transparent 
+          opacity={0.6}
+        />
       </instancedMesh>
     </group>
   )

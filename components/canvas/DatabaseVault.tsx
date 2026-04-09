@@ -42,17 +42,17 @@ export function DatabaseVault({ position = [0, -30, -80] }: { position?: [number
       {/* Access Control Rings */}
       <mesh ref={outerRingRef} position={[0, 0, 0]}>
         <torusGeometry args={[14, 0.5, 16, 6]} /> {/* Hexagonal Ring */}
-        <meshBasicMaterial color="#FF9500" wireframe transparent opacity={0.6} />
+        <meshStandardMaterial color="#FF9500" metalness={1} roughness={0} emissive="#FF9500" emissiveIntensity={0.5} transparent opacity={0.6} />
       </mesh>
 
       <mesh ref={innerRingRef} position={[0, 5, 0]}>
         <torusGeometry args={[11, 0.2, 16, 100]} />
-        <meshBasicMaterial color="#FF3B3B" transparent opacity={0.8} />
+        <meshStandardMaterial color="#FF3B3B" metalness={1} roughness={0} emissive="#FF3B3B" emissiveIntensity={1} />
       </mesh>
       
       <mesh ref={innerRingRef} position={[0, -5, 0]}>
         <torusGeometry args={[11, 0.2, 16, 100]} />
-        <meshBasicMaterial color="#FF3B3B" transparent opacity={0.8} />
+        <meshStandardMaterial color="#FF3B3B" metalness={1} roughness={0} emissive="#FF3B3B" emissiveIntensity={1} />
       </mesh>
 
       {/* Security Scanning Beam */}

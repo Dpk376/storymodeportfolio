@@ -14,13 +14,15 @@ import { TerminalNode } from './TerminalNode'
 export function Experience() {
   return (
     <Canvas dpr={[1, 2]} gl={{ antialias: false, powerPreference: 'high-performance' }}>
-      <color attach="background" args={['#050810']} />
+      <color attach="background" args={['#030408']} />
+      <fog attach="fog" args={['#030408', 30, 120]} />
       
       <CameraRig />
       
-      {/* Lighting */}
-      <ambientLight intensity={0.2} />
-      <directionalLight position={[10, 10, 5]} intensity={1} color="#00D4FF" />
+      {/* Cinematic Lighting */}
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[10, 20, 10]} intensity={1.5} color="#00D4FF" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#00FF88" />
       
       {/* Scenes will be conditionally rendered based on scroll progress or fully mounted with LOD */}
       <Suspense fallback={null}>
